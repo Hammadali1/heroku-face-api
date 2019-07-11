@@ -9,7 +9,7 @@ certifi==2019.6.16
 cffi==1.11.5
 chardet==3.0.4
 click==6.7
-cmake==3.14.4
+cmake==3.2.3
 dlib==19.7.0
 face-recognition==1.2.3
 face-recognition-models==0.3.0
