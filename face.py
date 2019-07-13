@@ -31,13 +31,13 @@ def Recognition(param):
     face_names = []
     process_this_frame = True
 
-    #frame=request.files['img']
+    frame=request.form['img']
     #data=frame.base64.b64decode(frame)
     #img=request.files['img']
     #frame = cv2.imread(data)
-    #im=base64.b64decode(img)
-    #nparr=np.fromstring(im,np.uint8)
-    #frame=cv2.imdecode(nparr,cv2.IMREAD_UNCHANGED)  
+    im=base64.b64decode(frame)
+    nparr=np.fromstring(im,np.uint8)
+    image=cv2.imdecode(nparr,1)  
     #image = cv2.imdecode(np.fromstring(frame.read(), np.uint8), cv2.IMREAD_UNCHANGED)
     #frame = cv2.imread(request.files['img'])
     # Resize frame of video to 1/4 size for faster face recognition processing
@@ -50,7 +50,7 @@ def Recognition(param):
 
     # Only process every other frame of video to save time
     
-    image = np.fromstring(base64.b64decode(param), np.uint8)    
+    #image = np.fromstring(base64.b64decode(param), np.uint8)    
     faces = face_cascade.detectMultiScale(image, 1.3, 5,minSize=(100, 100))
 
 
