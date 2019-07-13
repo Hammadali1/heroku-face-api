@@ -14,9 +14,9 @@ app = Flask(__name__)
 
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
-@app.route("/image/<string:param>",methods=['POST'])
+@app.route("/image",methods=['POST'])
 
-def Recognition(param):  
+def Recognition():  
   if request.method=='POST':
      # Grab a single frame of video
     with open("test1.txt", "rb") as fp:   # Unpickling
@@ -92,7 +92,7 @@ def Recognition(param):
                 # face_names.append({'id':name})
                 #cv2.imshow("input",data)
                 
-                return jsonify([{'response':name}])
+                return jsonify({'response':name})
             
     else:
                  return ("ID does not exist")
