@@ -7,7 +7,7 @@ from wtforms import Form, StringField, SubmitField
 import glob
 import numpy as np
 import face_recognition
-from cv2 import cv2
+#from cv2 import cv2
 import pickle
 
 app = Flask(__name__)
