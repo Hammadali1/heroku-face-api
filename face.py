@@ -12,7 +12,7 @@ import pickle
 
 app = Flask(__name__)
 
-
+"""
 @app.route("/image",methods=['POST'])
 
 def Recognition():  
@@ -96,7 +96,7 @@ def Recognition():
 
   else:
     return render_template("api.html")
-
+"""
 
 
 @app.route("/")
