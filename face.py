@@ -1,4 +1,4 @@
-
+import base64
 import os
 from wtforms import Form, StringField, SubmitField
 from flask_pymongo import PyMongo
@@ -14,9 +14,9 @@ app = Flask(__name__)
 
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
-@app.route("/image",methods=['POST'])
+@app.route("/image/<string:param>",methods=['POST'])
 
-def Recognition():  
+def Recognition(param):  
   if request.method=='POST':
      # Grab a single frame of video
     with open("test1.txt", "rb") as fp:   # Unpickling
@@ -31,14 +31,14 @@ def Recognition():
     face_names = []
     process_this_frame = True
 
-    frame=request.files['img']
+    #frame=request.files['img']
     #data=frame.base64.b64decode(frame)
     #img=request.files['img']
     #frame = cv2.imread(data)
     #im=base64.b64decode(img)
     #nparr=np.fromstring(im,np.uint8)
     #frame=cv2.imdecode(nparr,cv2.IMREAD_UNCHANGED)  
-    image = cv2.imdecode(np.fromstring(frame.read(), np.uint8), cv2.IMREAD_UNCHANGED)
+    #image = cv2.imdecode(np.fromstring(frame.read(), np.uint8), cv2.IMREAD_UNCHANGED)
     #frame = cv2.imread(request.files['img'])
     # Resize frame of video to 1/4 size for faster face recognition processing
     #                           small_frame = cv2.resize(frame, (0, 0), fx=0.25, fy=0.25)
@@ -49,6 +49,8 @@ def Recognition():
     #                            rgb_small_frame = small_frame[:, :, ::-1]
 
     # Only process every other frame of video to save time
+    
+    image = np.fromstring(base64.b64decode(param), np.uint8)    
     faces = face_cascade.detectMultiScale(image, 1.3, 5,minSize=(100, 100))
 
 
