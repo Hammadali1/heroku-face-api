@@ -36,6 +36,7 @@ Mako==1.0.7
 Markdown==3.0.1
 MarkupSafe==1.0
 numpy==1.16.1
+opencv-python
 pickle-mixin==1.0.2
 Pillow==5.4.1
 protobuf==3.6.1
