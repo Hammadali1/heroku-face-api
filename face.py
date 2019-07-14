@@ -95,8 +95,8 @@ def Recognition():
                 return jsonify({'response':name})
             
     else:
-                 return ("ID does not exist")
-
+             return jsonify({'response':name})
+         
   else:
     return render_template("api.html")
 
