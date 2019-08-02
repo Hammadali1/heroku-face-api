@@ -142,7 +142,7 @@ def Recognition():
                 return jsonify([{'response':name,'images':images}])
             
         else:
-                 return (name)
+                 return ('Unknown')
     else:
        return ('Face Not Detected')   
 
