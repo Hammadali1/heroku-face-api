@@ -10,6 +10,7 @@ import face_recognition
 import cv2
 import pickle
 from flask_cors import CORS
+import urllib
 
 app = Flask(__name__)
 CORS(app)
