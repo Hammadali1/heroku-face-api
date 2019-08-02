@@ -7,7 +7,7 @@ from wtforms import Form, StringField, SubmitField
 import glob
 import numpy as np
 import face_recognition
-import cv2
+import cv as cv2
 import pickle
 from flask_cors import CORS
 
