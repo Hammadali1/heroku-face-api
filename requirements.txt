@@ -9,6 +9,7 @@ certifi==2019.6.16
 cffi==1.11.5
 chardet==3.0.4
 click==6.7
+cmake
 face-recognition==1.2.3
 face-recognition-models==0.3.0
 Flask==1.0.2
