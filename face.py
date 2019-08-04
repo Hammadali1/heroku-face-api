@@ -39,27 +39,28 @@ def cam():
 
                 
                 faces = face_cascade.detectMultiScale(image, 1.3, 5,minSize=(100, 100))
-                facecnt = len(faces)
-                height, width = image.shape[:2]
+                if type(faces) is not tuple:
+                        facecnt = len(faces)
+                        height, width = image.shape[:2]
 
 
 
-                for (x, y, w, h) in faces:
-                   r = max(w, h) / 2
-                   centerx = x + w / 2
-                   centery = y + h / 2
-                   nx = int(centerx - r)
-                   ny = int(centery - r)
-                   nr = int(r * 2)
+                        for (x, y, w, h) in faces:
+                           r = max(w, h) / 2
+                           centerx = x + w / 2
+                           centery = y + h / 2
+                           nx = int(centerx - r)
+                           ny = int(centery - r)
+                           nr = int(r * 2)
 
-                   faceimg = image[ny:ny+nr, nx:nx+nr]
-                   lastimg = cv2.resize(faceimg, (300, 300))
+                           faceimg = image[ny:ny+nr, nx:nx+nr]
+                           lastimg = cv2.resize(faceimg, (300, 300))
 
-                mubi = face_recognition.face_encodings(lastimg)[0]
-                known_face_encoding.append(mubi)
-                known_face_name.append(i["name"])
-                known_id.append(i["_id"])    
-            
+                        mubi = face_recognition.face_encodings(lastimg)[0]
+                        known_face_encoding.append(mubi)
+                        known_face_name.append(i["name"])
+                        known_id.append(i["_id"])    
+
         with open("test1.txt", "wb") as fp:   #Pickling
              pickle.dump(known_face_encoding, fp)
 
