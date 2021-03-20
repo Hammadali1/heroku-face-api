@@ -15,7 +15,7 @@ Flask-WTF==0.14.2
 GitHub-Flask==3.2.0
 gunicorn==19.9.0
 itsdangerous==0.24
-Jinja2==2.10
+Jinja2==2.11.3
 Keras-Applications==1.0.7
 Keras-Preprocessing==1.0.9
 MarkupSafe==1.0
