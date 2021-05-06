@@ -2,7 +2,7 @@ cmake
 face-recognition==1.2.3
 face-recognition-models==0.3.0
 Flask==1.0.2
-Flask-Cors==3.0.8
+Flask-Cors==3.0.9
 Flask-Ext==0.1
 Flask-JWT==0.3.2
 Flask-Login==0.4.1
