@@ -19,7 +19,7 @@ Jinja2==2.10
 Keras-Applications==1.0.7
 Keras-Preprocessing==1.0.9
 MarkupSafe==1.0
-numpy==1.16.1
+numpy==1.22.0
 pickle-mixin==1.0.2
 pybase64==0.5.0
 pymongo==3.7.1
